@@ -2,7 +2,7 @@ module.exports = {
     "env": {
         "browser": true,
         "es2020": true,
-        "jest": true 
+        "jest": true
     },
     "extends": [
         "eslint:recommended",
@@ -13,10 +13,10 @@ module.exports = {
         "airbnb"
     ],
     "settings": {
-       "react": {
-           "pragma": "React",
-           "version": "detect"
-       }
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
     },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -32,6 +32,6 @@ module.exports = {
         "prettier"
     ],
     "rules": {
-        "react/jsx-filename-extension": [1, {"extensions": [".ts", ".tsx"] }]
+        "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }]
     }
 };
