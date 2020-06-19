@@ -15,7 +15,7 @@ module.exports = {
        "airbnb-typescript",
        "airbnb/hooks",
        "plugin:@typescript-eslint/eslint-recommended",
-       "plugin:@typescript-eslint/recommended",
+       "plugin:@typescript-eslint/recommended", 
        "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
     "settings": {
@@ -30,7 +30,8 @@ module.exports = {
             "jsx": true
         },
         "ecmaVersion": 11,
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "@typescript-eslint",
