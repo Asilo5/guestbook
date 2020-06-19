@@ -5,12 +5,18 @@ module.exports = {
         "jest": true
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "prettier/@typescript-eslint",
+        // "eslint:recommended",
+        // "plugin:react/recommended",
+        // "plugin:@typescript-eslint/recommended",
+        // "prettier/@typescript-eslint",
         // "plugin:prettier/recommended"
-        "airbnb"
+        // "airbnb",
+
+       "airbnb-typescript",
+       "airbnb/hooks",
+       "plugin:@typescript-eslint/eslint-recommended",
+       "plugin:@typescript-eslint/recommended",
+       "plugin:@typescript-eslint/recommended-requiring-type-checking"
     ],
     "settings": {
         "react": {
@@ -27,7 +33,6 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react",
         "@typescript-eslint",
         "prettier"
     ],
