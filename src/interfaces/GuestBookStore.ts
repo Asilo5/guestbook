@@ -1,0 +1,1 @@
+// Describe how we can interact with the store || Manages these GuestBook entry types
