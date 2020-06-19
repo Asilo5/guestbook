@@ -1,22 +1,24 @@
 import React from 'react';
+import { Switch, Route, Redirect, Link } from 'react-router-dom';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className='App'>
+      <section>
+        <Link to='/'>HomePage</Link>
+        <Link to='/about'>About</Link>
+      </section>
+      
+      <Switch>
+        <Route exact path='/'>
+             <h1>HomePage</h1>
+        </Route>
+        <Route exact path='/about'>
+             <h2>About</h2>
+        </Route>
+        <Redirect to='/' />
+      </Switch>
+    </section>
   );
 };
 
