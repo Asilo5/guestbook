@@ -7,11 +7,15 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 
+import { useStoreState } from '../../hooks';
 import useStyles from './styles';
 
 const App: React.FC = () => {
   
   const classes = useStyles();
+  const { entries } = useStoreState((state) => state.guestbook);
+
+  console.log(entries)
 
   return (
     <section className={classes.root}>
@@ -20,26 +24,15 @@ const App: React.FC = () => {
           <IconButton edge="start" color="inherit" aria-label="menu">
             🍔
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit"><Link to='/'>Home</Link></Button>
+          <Button color="inherit"><Link to='/about'>About</Link></Button>
         </Toolbar>
       </AppBar>
 
       <section>
-        <section>
-           <Link to='/'>HomePage</Link>
-           <Link to='/about'>About</Link>
-         </section>
-      
          <Switch>
-         <Route exact path='/'>
-                <h1>HomePage</h1>
-           </Route>
-           <Route exact path='/about'>
-                <h2>About</h2>
-           </Route>
+           <Route exact path='/' component={Home} /> 
+           {/* <Route exact path='/about' component={About}/> */}
            <Redirect to='/' />
          </Switch>
        </section>
