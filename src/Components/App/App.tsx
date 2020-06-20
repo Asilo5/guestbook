@@ -3,11 +3,12 @@ import { Switch, Route, Redirect, Link } from 'react-router-dom';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 
 import useStyles from './styles';
+import Home from '../Home/Home';
+import About from '../About/About';
 
 const App: React.FC = () => {
   
@@ -20,26 +21,15 @@ const App: React.FC = () => {
           <IconButton edge="start" color="inherit" aria-label="menu">
             🍔
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
+          <Button component={Link} to='/' color="inherit">Home</Button>
+          <Button component={Link} to='/about' color="inherit">About</Button>
         </Toolbar>
       </AppBar>
 
       <section>
-        <section>
-           <Link to='/'>HomePage</Link>
-           <Link to='/about'>About</Link>
-         </section>
-      
          <Switch>
-         <Route exact path='/'>
-                <h1>HomePage</h1>
-           </Route>
-           <Route exact path='/about'>
-                <h2>About</h2>
-           </Route>
+           <Route exact path='/' component={Home} /> 
+           <Route exact path='/about' component={About}/>
            <Redirect to='/' />
          </Switch>
        </section>
