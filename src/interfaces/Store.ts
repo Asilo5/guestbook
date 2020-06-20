@@ -1,7 +1,7 @@
 // Describe how we can interact with the store || Manages these GuestBook entry types
 
-import { GuestBookModel } from './GuestBookModel';
+import GuestBookModel from './GuestBookModel';
 
-export interface GuestBookStore {
+export default interface Store {
   guestbook: GuestBookModel;
 };
