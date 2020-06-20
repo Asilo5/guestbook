@@ -1,14 +1,13 @@
 import React from 'react';
 
+import TextField from '@material-ui/core/TextField';
+
 const Form: React.FC = () => {
 
     return (
-      <section>
-          <h2>Form</h2>
-          <form>
-
-          </form>
-      </section>
+        <form noValidate>
+            <TextField label='name' name='name ' />
+        </form>
     )
 };
 
