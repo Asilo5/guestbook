@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import Container from '@material-ui/core/Container';
 
 import useStyles from './styles';
 import Home from '../Home/Home';
@@ -26,13 +27,13 @@ const App: React.FC = () => {
         </Toolbar>
       </AppBar>
 
-      <section>
+      <Container maxWidth='sm'>
          <Switch>
            <Route exact path='/' component={Home} /> 
            <Route exact path='/about' component={About}/>
            <Redirect to='/' />
          </Switch>
-       </section>
+       </Container>
     </section>
   );
 };
