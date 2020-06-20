@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 import { useStoreState } from '../../hooks';
+import Form from '../Form/Form';
 
 const Home: React.FC = () => {
 
@@ -15,6 +16,8 @@ const Home: React.FC = () => {
     
     return (
         <section>
+            <Form />
+
             {entries.map((entry) => (
                 <Card>
                     <CardContent>
