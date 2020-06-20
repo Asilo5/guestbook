@@ -1,8 +1,8 @@
 import { createTypedHooks } from 'easy-peasy'; // 👈import the helper
-import { GuestBookStore } from '../interfaces/Store'; // 👈 import our model type
+import Store from '../interfaces/Store'; // 👈 import our model type
 
-// Provide our model to the helper      👇
-const typedHooks = createTypedHooks<GuestBookStore>();
+// Provide our model to the helper    👇
+const typedHooks = createTypedHooks<Store>();
 
 // 👇 export the typed hooks
 export const useStoreActions = typedHooks.useStoreActions;
