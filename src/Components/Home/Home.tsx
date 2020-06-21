@@ -6,17 +6,19 @@ import Typography from '@material-ui/core/Typography';
 
 import { useStoreState } from '../../hooks';
 import Form from '../Form/Form';
+import useStyles from './styles';
 
 const Home: React.FC = () => {
 
     const { entries } = useStoreState((state) => state.guestbook);
-    
+    const classes = useStyles();
+
     return (
         <section>
             <Form />
 
             {entries.map((entry) => (
-                <Card key={entry.submitted.toLocaleDateString()}>
+                <Card key={entry.id} className={classes.entryCard} >
                     <CardContent>
                         <Typography variant='h2'> 
                            {entry.name}
@@ -25,7 +27,7 @@ const Home: React.FC = () => {
                            {entry.content}
                         </Typography>
                         <Typography variant='caption'>
-                           {entry.submitted.toLocaleDateString()}
+                           {entry.submitted ? entry.submitted.toLocaleDateString() : ''} 
                         </Typography>
                     </CardContent>
                 </Card>
