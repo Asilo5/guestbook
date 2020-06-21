@@ -8,15 +8,22 @@ import useStyles from './styles';
 import { useForm } from "react-hook-form";
 import GuestBookEntry from '../../interfaces/GuestBookEntry';
 
+const GuestBookEntrySchema = yup.object().shape({
+   name: yup.string().trim().required(),
+   content: yup.string().trim().min(10).max(200).required()
+}); 
+
 const Form: React.FC = () => {
 
   const classes = useStyles(); 
-  const { register, handleSubmit } = useForm<GuestBookEntry>();
+  const { register, handleSubmit, errors  } = useForm<GuestBookEntry>({
+      validationSchema: GuestBookEntrySchema
+  });
 
   const submitForm = (data: GuestBookEntry): void => {
      console.log(data);
   };
-
+  console.log(errors )
     return (
         <form onSubmit={handleSubmit(submitForm)} noValidate className={classes.formContainer}>
             <TextField 
