@@ -29,10 +29,9 @@ const Form: React.FC = () => {
   });
 
   const submitForm = (data: GuestBookEntry): void => {
-     console.log(data);
+    
   };
-  console.log(errors )
-  
+
     return (
         <form onSubmit={handleSubmit(submitForm)} noValidate className={classes.formContainer}>
             <TextField 
