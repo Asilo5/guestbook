@@ -7,10 +7,17 @@ const GuestBook: GuestBookModel = {
   setEntries: action((state, entries) => {
     state.entries = entries;
   }),
-  addEntry: action((state, entry ) => {
-    entry.id = Date.now();
-    entry.submitted = new Date();
-    state.entries.unshift(entry);
+  addEntry: thunk(async (state, entry ) => {
+    const response = await fetch('http://localhost:3001/entries', {
+       method: 'POST',
+       headers: {
+         'content-type' : 'application/json'
+       },
+       body: JSON.stringify(entry)
+    });
+
+    const result = await response.json(); 
+    console.log(result);
   }),
   getEntries: thunk(async (state) => {
      const response = await fetch('http://localhost:3001/entries');
