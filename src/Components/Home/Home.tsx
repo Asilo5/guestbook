@@ -25,7 +25,7 @@ const Home: React.FC = () => {
                            {entry.content}
                         </Typography>
                         <Typography variant='caption'>
-                           {entry.id}
+                           {entry.submitted ? entry.submitted.toLocaleDateString() : ''} 
                         </Typography>
                     </CardContent>
                 </Card>
