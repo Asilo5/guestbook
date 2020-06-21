@@ -5,13 +5,14 @@ import Box from '@material-ui/core/Box';
 
 import useStyles from './styles';
 import { useForm } from "react-hook-form";
+import GuestBookEntry from '../../interfaces/GuestBookEntry';
 
 const Form: React.FC = () => {
 
   const classes = useStyles(); 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm<GuestBookEntry>();
 
-  const submitForm = (data): void => {
+  const submitForm = (data: GuestBookEntry): void => {
      console.log(data);
   };
 
@@ -33,7 +34,13 @@ const Form: React.FC = () => {
                inputRef={register}
             />
             <Box display='flex' justifyContent='center'>
-                <Button variant="contained" color='primary'> Submit </Button>
+                <Button 
+                  type='submit' 
+                  variant="contained" 
+                  color='primary'
+                > 
+                  Submit 
+                </Button>
             </Box>
         </form>
     )
