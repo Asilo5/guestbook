@@ -7,6 +7,7 @@ import * as yup from 'yup';
 import useStyles from './styles';
 import { useForm } from "react-hook-form";
 import GuestBookEntry from '../../interfaces/GuestBookEntry';
+import { useStoreActions } from '../../hooks'; // 👈 import typed hook
 
 const GuestBookEntrySchema = yup.object().shape({
    name: yup
@@ -24,12 +25,13 @@ const GuestBookEntrySchema = yup.object().shape({
 const Form: React.FC = () => {
 
   const classes = useStyles(); 
+  const addEntry =  useStoreActions((state) => state.guestbook.addEntry);
   const { register, handleSubmit, errors  } = useForm<GuestBookEntry>({
       validationSchema: GuestBookEntrySchema
   });
 
   const submitForm = (data: GuestBookEntry): void => {
-    
+    addEntry(data);  // 👈 dispatch our action with the text describing the data
   };
 
     return (
