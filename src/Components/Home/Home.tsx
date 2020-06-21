@@ -10,7 +10,7 @@ import useStyles from './styles';
 
 const Home: React.FC = () => {
 
-    const { entries } = useStoreState((state) => state.guestbook);
+    const { reverseEntries } = useStoreState((state) => state.guestbook);
     const getEntries = useStoreActions((state) => state.guestbook.getEntries);
     const classes = useStyles();
 
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
         <section>
             <Form />
 
-            {entries.map((entry) => (
+            {reverseEntries.map((entry) => (
                 <Card key={entry.id} className={classes.entryCard} >
                     <CardContent>
                         <Typography variant='h2'> 
