@@ -25,13 +25,13 @@ const GuestBookEntrySchema = yup.object().shape({
 const Form: React.FC = () => {
 
   const classes = useStyles(); 
-  const addEntry =  useStoreActions((state) => state.guestbook.addEntry);
+  const createEntry = useStoreActions((state) => state.guestbook.createEntry);
   const { register, handleSubmit, errors, reset  } = useForm<GuestBookEntry>({
       validationSchema: GuestBookEntrySchema
   });
 
   const submitForm = (data: GuestBookEntry): void => {
-    addEntry(data);  // 👈 dispatch our action with the text describing the data
+    createEntry(data);  // 👈 dispatch our action with the text describing the data
     reset(); // resets form
   };
 

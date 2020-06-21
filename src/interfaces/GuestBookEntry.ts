@@ -4,5 +4,5 @@ export default interface GuestBookEntry {
   id: number;
   name: string;
   content: string;
-  submitted?: Date;  
+  submitted?: string;  
 };
