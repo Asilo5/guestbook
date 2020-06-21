@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-import { useStoreState } from '../../hooks';
+import { useStoreState, useStoreActions } from '../../hooks';
 import Form from '../Form/Form';
 import useStyles from './styles';
 
 const Home: React.FC = () => {
 
     const { entries } = useStoreState((state) => state.guestbook);
+    const getEntries = useStoreActions((state) => state.guestbook.getEntries);
     const classes = useStyles();
+
+    useEffect(() => {
+       getEntries();
+    }, []);
 
     return (
         <section>
