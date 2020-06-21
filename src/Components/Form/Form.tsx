@@ -26,12 +26,13 @@ const Form: React.FC = () => {
 
   const classes = useStyles(); 
   const addEntry =  useStoreActions((state) => state.guestbook.addEntry);
-  const { register, handleSubmit, errors  } = useForm<GuestBookEntry>({
+  const { register, handleSubmit, errors, reset  } = useForm<GuestBookEntry>({
       validationSchema: GuestBookEntrySchema
   });
 
   const submitForm = (data: GuestBookEntry): void => {
     addEntry(data);  // 👈 dispatch our action with the text describing the data
+    reset(); // resets form
   };
 
     return (
