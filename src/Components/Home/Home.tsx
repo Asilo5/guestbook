@@ -16,7 +16,7 @@ const Home: React.FC = () => {
             <Form />
 
             {entries.map((entry) => (
-                <Card key={entry.submitted.toLocaleDateString()}>
+                <Card key={entry.id}>
                     <CardContent>
                         <Typography variant='h2'> 
                            {entry.name}
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
                            {entry.content}
                         </Typography>
                         <Typography variant='caption'>
-                           {entry.submitted.toLocaleDateString()}
+                           {entry.id}
                         </Typography>
                     </CardContent>
                 </Card>
